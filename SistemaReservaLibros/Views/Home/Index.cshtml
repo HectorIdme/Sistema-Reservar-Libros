@@ -1,0 +1,120 @@
+﻿@model List<SistemaReservaLibros.Models.Books>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<main>
+    <section class="row" aria-labelledby="aspnetTitle">
+        <h1 id="title">Reserva un Libro</h1>
+    </section>
+
+    <section class="row">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading">
+                            <h3 class="panel-title">Books</h3>
+                        </div>
+                        <div class="panel-body">
+                            <form action="@Url.Action("Index", "Home")" method="post">
+                                <input id="dev-table-filter" type="text" class="form-control" name="searchTerm" placeholder="Filter Books" />
+                                <button type="submit">Search</button>
+                            </form>
+                        </div>
+                        <table class="table table-hover" id="dev-table">
+                            <thead>
+                                <tr>
+                                    <th>IdBook</th>
+                                    <th>Title</th>
+                                    <th>Code</th>
+                                    <th>Status</th>
+                                    <th>Acciones</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+
+                                @foreach (var libro in Model)
+                                {
+                                    <tr class="filaLibro" data-id="@libro.idBook">
+                                        <td>@libro.idBook</td>
+                                        <td>@libro.varTitle</td>
+                                        <td>@libro.varCode</td>
+                                        <td>@libro.bitStatus</td>
+                                        <td>
+                                            <!-- Nuevo enlace para abrir el modal -->
+                                            <a href="#" class="abrirModal" data-toggle="modal" data-target="#detallesModal">Reservar</a>
+                                        </td>
+
+                                    </tr>
+                                }
+
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+    <!-- Modal para mostrar detalles -->
+    <div class="modal fade" id="detallesModal" tabindex="-1" role="dialog" aria-labelledby="detallesModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="detallesModalLabel">Detalles del Libro</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>IdBook: <span id="modalIdBook"></span></p>
+                    <p>VarTitle: <span id="modalVarTitle"></span></p>
+                    <p>VarCode: <span id="modalVarCode"></span></p>
+                    <p>BitStatus: <span id="modalBitStatus"></span></p>
+                </div>
+                <div>
+                    <p>¿Estás seguro que deseas reservar este libro?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary" id="aceptarBtn">Aceptar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @section scripts {
+        <script>
+            $(document).ready(function () {
+                // Manejar clic en una fila de la tabla
+                $('.filaLibro').click(function () {
+                    var idBook = $(this).data('id');
+                    // Actualizar el contenido del modal con detalles del libro
+                    $('#modalIdBook').text(idBook);
+                    $('#modalVarTitle').text($(this).find('td:eq(1)').text());
+                    $('#modalVarCode').text($(this).find('td:eq(2)').text());
+                    $('#modalBitStatus').text($(this).find('td:eq(3)').text());
+                    // Mostrar el modal
+                    $('#detallesModal').modal('show');
+                });
+
+                // Manejar clic en el enlace "Abrir Modal"
+                $('.abrirModal').click(function (e) {
+                    e.preventDefault(); // Evitar la navegación a la URL del enlace
+                    var filaLibro = $(this).closest('.filaLibro');
+                    filaLibro.trigger('click'); // Simular clic en la fila para mostrar el modal
+                });
+
+                // Resto del código...
+            });
+        </script>
+    }
+
+
+</main>

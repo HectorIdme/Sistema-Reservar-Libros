@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.33516.290
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SistemaReservaLibros", "SistemaReservaLibros\SistemaReservaLibros.csproj", "{3517C522-7238-4257-910B-3A4CA33F40E8}"
+	ProjectSection(ProjectDependencies) = postProject
+		{5961CB70-3E71-4853-8E18-D473B80F9CCA} = {5961CB70-3E71-4853-8E18-D473B80F9CCA}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WcfService", "WcfService\WcfService.csproj", "{5961CB70-3E71-4853-8E18-D473B80F9CCA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3517C522-7238-4257-910B-3A4CA33F40E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3517C522-7238-4257-910B-3A4CA33F40E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3517C522-7238-4257-910B-3A4CA33F40E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3517C522-7238-4257-910B-3A4CA33F40E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5961CB70-3E71-4853-8E18-D473B80F9CCA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5961CB70-3E71-4853-8E18-D473B80F9CCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5961CB70-3E71-4853-8E18-D473B80F9CCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5961CB70-3E71-4853-8E18-D473B80F9CCA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B947E417-8E14-4401-8EB1-B8F14369D9C8}
+	EndGlobalSection
+EndGlobal

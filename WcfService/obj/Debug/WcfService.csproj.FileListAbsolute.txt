@@ -1,0 +1,7 @@
+D:\projects\Sistema-Reserva-Libros\SistemaReservaLibros\WcfService\bin\WcfService.dll.config
+D:\projects\Sistema-Reserva-Libros\SistemaReservaLibros\WcfService\bin\WcfService.dll
+D:\projects\Sistema-Reserva-Libros\SistemaReservaLibros\WcfService\bin\WcfService.pdb
+D:\projects\Sistema-Reserva-Libros\SistemaReservaLibros\WcfService\obj\Debug\WcfService.csproj.AssemblyReference.cache
+D:\projects\Sistema-Reserva-Libros\SistemaReservaLibros\WcfService\obj\Debug\WcfService.csproj.CoreCompileInputs.cache
+D:\projects\Sistema-Reserva-Libros\SistemaReservaLibros\WcfService\obj\Debug\WcfService.dll
+D:\projects\Sistema-Reserva-Libros\SistemaReservaLibros\WcfService\obj\Debug\WcfService.pdb
